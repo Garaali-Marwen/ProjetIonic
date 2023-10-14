@@ -6,7 +6,7 @@ import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import {FooterPageModule} from "./footer/footer.module";
+import {FooterPageModule} from "./Pages/footer/footer.module";
 
 @NgModule({
   declarations: [AppComponent],

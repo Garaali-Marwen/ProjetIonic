@@ -1,85 +1,10 @@
 <ion-content class="ion-padding" [fullscreen]="true">
+  <ion-grid>
+    <h1>Category 1</h1>
     <ion-row class="scroll">
-      <ion-list-header>
-        <ion-label>Video Games</ion-label>
-      </ion-list-header>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png"/>
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-            Here's a small text description for the card content. Nothing more, nothing less.
-          </ion-card-content>
-        </ion-card>
+      <ion-col size="auto">
+        <app-item [item]="{name: 'pizza ...', price: '20$'}"></app-item>
       </ion-col>
     </ion-row>
+  </ion-grid>
 </ion-content>

@@ -13,7 +13,11 @@ const routes: Routes = [
   },
   {
     path: 'footer',
-    loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
+    loadChildren: () => import('./Pages/footer/footer.module').then(m => m.FooterPageModule)
+  },
+  {
+    path: 'item-form',
+    loadChildren: () => import('./Pages/item-form/item-form.module').then( m => m.ItemFormPageModule)
   }
 ];
 

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {UserService} from "../../Services/user.service";
+import jwt_decode from "jwt-decode";
 
 
 @Component({
@@ -8,29 +10,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./signin.page.scss'],
 })
 export class SigninPage implements OnInit {
-
-  login={
-    email: "",
-    password: "",
-   };
-  type: boolean = true;
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private userService: UserService) {
+  }
 
 
   ngOnInit() {
   }
 
 
-  changeType(){
-    this.type = !this.type;
- }
+  goToSignup() {
+    this.router.navigate(['/signup']);
+  }
 
- 
-
- goToHome(){
-  
- }
- goToSignup(){
-  this.router.navigate(['/signup']);
- }
+  logIn(value: any) {
+    this.userService.signIn(value).subscribe({
+      next: (response: any) => {
+        var decoded = jwt_decode(response.token) as any;
+        this.userService.setUserId(decoded.id);
+        this.userService.setRole(decoded.role);
+        this.userService.setUserEmail(decoded.sub);
+        this.router.navigateByUrl('/');
+        setTimeout(()=>{
+          window.location.reload()
+        }, 1)
+      },
+      error: error => console.log(error)
+    });
+  }
 }

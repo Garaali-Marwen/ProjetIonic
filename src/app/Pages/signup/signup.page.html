@@ -1,84 +1,87 @@
-
 <ion-content [fullscreen]="true">
   <div class="bg">
-   <div class="upper">
+    <div class="upper">
       <div class="icon" style="display: flex;justify-content: center;">
         <ion-icon name="restaurant"></ion-icon>
       </div>
 
-   </div>
+    </div>
 
-   <div class="middle">
-     <div  class="box">
-       <form #sForm="ngForm">
+    <div class="middle">
+      <div class="box">
+        <form #signupForm="ngForm" (ngSubmit)="signUp(signupForm.value)">
           <p> Create Account</p>
-
-
           <ion-item>
-           <ion-label class="custom-label" position="floating">First Name</ion-label>
-           <ion-input type="Text input" placeholder="Your First Name" name="first" #first="ngModel" [(ngModel)]="s.email" required ></ion-input>
-           <ion-icon  name="person-circle-outline" slot="end"></ion-icon>
-
-         </ion-item>
-          <div *ngIf="email.invalid && email.touched" >
-           <ion-text color="danger text-center">
-             <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Email Address </h4>
-           </ion-text>
-          </div>
-
-
-          <ion-item>
-           <ion-label class="custom-label" position="floating">Last Name</ion-label>
-           <ion-input type="Text input" placeholder="Your Last Name" name="last" #last="ngModel" [(ngModel)]="s.last" required ></ion-input>
-           <ion-icon   name="checkmark-done-circle-outline" slot="end"></ion-icon>
-         </ion-item>
-          <div *ngIf="email.invalid && email.touched" >
-           <ion-text color="danger text-center">
-             <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Email Address </h4>
-           </ion-text>
-          </div>
-
-         <ion-item>
-           <ion-label class="custom-label" position="floating">Phone</ion-label>
-           <ion-input type="" placeholder="Your Phone" name="phone" #phone="ngModel" [(ngModel)]="s.phone" required ></ion-input>
-           <ion-icon  name="call-outline" slot="end"></ion-icon>
+            <ion-input labelPlacement="floating" placeholder="Your First Name"
+                       name="firstName"
+                       ngModel
+                       #firstName="ngModel"
+                       required="true">
+              <div slot="label">First name
+                <ion-text style="font-size: 15px" color="danger" *ngIf="firstName.invalid && firstName.touched"><sup>Please Write your First name</sup></ion-text>
+              </div>
+            </ion-input>
+            <ion-icon  name="person-circle-outline" slot="end"></ion-icon>
           </ion-item>
 
-
-
+          <ion-item>
+            <ion-input labelPlacement="floating" placeholder="Your Last Name"
+                       name="lastName"
+                       ngModel
+                       #lastName="ngModel"
+                       required="true">
+              <div slot="label">Last name
+                <ion-text style="font-size: 15px" color="danger" *ngIf="lastName.invalid && lastName.touched"><sup>Please Write your Last name</sup></ion-text>
+              </div>
+            </ion-input>
+            <ion-icon  name="person-circle-outline" slot="end"></ion-icon>
+          </ion-item>
 
           <ion-item>
-            <ion-label class="custom-label" position="floating">Email Address</ion-label>
-            <ion-input type="email" placeholder="Your Email" name="email" #email="ngModel" [(ngModel)]="s.email" required email></ion-input>
+            <ion-input labelPlacement="floating" placeholder="Your Phone Number"
+                       type="number"
+                       name="phoneNumber"
+                       ngModel
+                       #phoneNumber="ngModel"
+                       required="true">
+              <div slot="label">Phone number
+                <ion-text style="font-size: 15px" color="danger" *ngIf="phoneNumber.invalid && phoneNumber.touched"><sup>Please Write your Phone number</sup></ion-text>
+              </div>
+            </ion-input>
+            <ion-icon  name="call-outline" slot="end"></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <ion-input labelPlacement="floating" placeholder="Your E-mail"
+                       name="email"
+                       ngModel
+                       #email="ngModel"
+                       required="true">
+              <div slot="label">E-mail
+                <ion-text style="font-size: 15px" color="danger" *ngIf="email.invalid && email.touched"><sup>Please Write your Email address</sup></ion-text>
+              </div>
+            </ion-input>
             <ion-icon class="icon-align-self-center" slot="end" name="mail"></ion-icon>
           </ion-item>
-           <div *ngIf="email.invalid && email.touched" >
-            <ion-text color="danger text-center">
-              <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Email Address </h4>
-            </ion-text>
-           </div>
-
 
           <ion-item>
-            <ion-label  class="custom-label" position="floating">Password</ion-label>
-            <ion-input [type] ="type ? 'password' : 'text'" placeholder="Your Password" name="password" #password="ngModel" [(ngModel)]="s.password" required ></ion-input>
-            <ion-icon class="icon-align-self-center" slot="end" name="eye-outline" (click) ="changeType()"></ion-icon>
+            <ion-input type="password" labelPlacement="floating" placeholder="Your Password"
+                       name="password"
+                       ngModel
+                       #password="ngModel"
+                       required="true">
+              <div slot="label">Password
+                <ion-text style="font-size: 15px" color="danger" *ngIf="password.invalid && password.touched"><sup>Please Write your Password</sup></ion-text>
+              </div>
+            </ion-input>
+            <ion-icon class="icon-align-self-center" slot="end" name="key-outline"></ion-icon>
           </ion-item>
-          <div *ngIf="password.invalid && password.touched" >
-            <ion-text color="danger text-center">
-              <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Password Address </h4>
-            </ion-text>
-           </div>
-           <!-- <p id="forgetPassword" (click)="goToForget()"> Forget Password</p> -->
-
-           <p></p>
-
-       </form>
-     </div>
-     <div class="btn">
-      <ion-button>Sign-Up</ion-button>
-     </div>
-   </div>
+          <div class="btn">
+            <ion-button type="submit" [disabled]="firstName.errors || lastName.errors || phoneNumber.errors || email.errors || password.errors">Sign-Up</ion-button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
 </ion-content>

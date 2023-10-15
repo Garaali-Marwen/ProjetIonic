@@ -4,52 +4,45 @@
     <div class="upper">
       <div class="icon" style="display: flex;justify-content: center;">
           <ion-icon name="restaurant"></ion-icon>
-      </div>  
+      </div>
    </div>
-  
+
    <div class="middle">
      <div  class="box">
-       <form #loginForm="ngForm">
-          <p> Please Signin to Your Account</p> 
-  
-          <ion-item >
-      
-            <ion-label position="floating" class="custom-label">Email Address</ion-label>
-            <ion-input  type="email" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="login.email" required email></ion-input>
-            <ion-icon class="icon-align-self-center" slot="end" name="mail"></ion-icon>
-         
-          </ion-item>
-           <div *ngIf="email.invalid && email.touched" >
-            <ion-text color="danger text-center">
-              <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Email Address </h4>
-            </ion-text>
-           </div>
-  
-  
-          <ion-item >
-            <ion-label class="custom-label" position="floating">Password</ion-label>
-            <ion-input  [type] ="type ? 'password' : 'text'" placeholder="Password" name="password" #password="ngModel" [(ngModel)]="login.password" required ></ion-input>
-            <ion-icon class="icon-align-self-center" slot="end" name="eye-outline" (click) ="changeType()"></ion-icon>
-          </ion-item>
-          <div *ngIf="password.invalid && password.touched" >
-            <ion-text color="danger text-center">
-              <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Password Address </h4>
-            </ion-text>
-           </div>
-          
+       <form #loginForm="ngForm" (ngSubmit)="logIn(loginForm.value)">
+          <p> Please Signin to Your Account</p>
+         <ion-item>
+           <ion-input labelPlacement="floating" placeholder="Your E-mail"
+                      name="email"
+                      ngModel
+                      #email="ngModel"
+                      required="true">
+             <div slot="label">E-mail
+               <ion-text style="font-size: 15px" color="danger" *ngIf="email.invalid && email.touched"><sup>Please Write your Email address</sup></ion-text>
+             </div>
+           </ion-input>
+           <ion-icon class="icon-align-self-center" slot="end" name="mail"></ion-icon>
+         </ion-item>
 
-           <!-- <a [routerLink]="['/signup']"> Create Account</a> -->
-           <p></p>
-           <p></p>
-          
+         <ion-item>
+           <ion-input type="password" labelPlacement="floating" placeholder="Your Password"
+                      name="password"
+                      ngModel
+                      #password="ngModel"
+                      required="true">
+             <div slot="label">Password
+               <ion-text style="font-size: 15px" color="danger" *ngIf="password.invalid && password.touched"><sup>Please Write your Password</sup></ion-text>
+             </div>
+           </ion-input>
+           <ion-icon class="icon-align-self-center" slot="end" name="key-outline"></ion-icon>
+         </ion-item>
+         <div class="btn">
+           <ion-button type="submit" [disabled]="email.errors || password.errors">Sign-in</ion-button>
+         </div>
        </form>
      </div>
-     <div class="btn">
-      <!-- <ion-button (click)="goToHome()" [disabled]="loginForm.invalid">Login</ion-button> -->
-     <ion-button (click)="goToHome()" >Sign-in</ion-button> 
-     </div>
      <div class="b">
-     <ion-button  (click)="goToSignup()">Create Account</ion-button> 
+     <ion-button  (click)="goToSignup()">Create Account</ion-button>
     </div>
   </div>
   </div>

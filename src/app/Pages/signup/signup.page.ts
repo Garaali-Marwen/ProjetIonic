@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ClientService} from "../../Services/client.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +17,8 @@ export class SignupPage implements OnInit {
     phone:"",
    };
    type: boolean = true;
-  constructor() { }
+  constructor(private clientService: ClientService,
+              private route: Router) { }
 
   ngOnInit() {
   }
@@ -23,4 +26,10 @@ export class SignupPage implements OnInit {
     this.type = !this.type;
  }
 
+  signUp(value: any) {
+    this.clientService.signUp(value).subscribe({
+      next: response => this.route.navigateByUrl("/signin"),
+      error: error => console.log(error)
+    })
+  }
 }

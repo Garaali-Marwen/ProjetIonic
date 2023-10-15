@@ -16,7 +16,9 @@ export class SingleItemPage implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.itemService.getItemById(params['id']).subscribe({
-        next: response => this.item = response,
+        next: response => {
+          this.item = response
+        },
         error: error => console.log(error)
       })
     });

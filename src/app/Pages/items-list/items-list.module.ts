@@ -10,6 +10,7 @@ import { ItemsListPage } from './items-list.page';
 import {IngredientFormPageModule} from "../ingredient-form/ingredient-form.module";
 import {HomePageModule} from "../../home/home.module";
 import {ItemFormPageModule} from "../item-form/item-form.module";
+import {FooterPageModule} from "../footer/footer.module";
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import {ItemFormPageModule} from "../item-form/item-form.module";
         ItemsListPageRoutingModule,
         IngredientFormPageModule,
         HomePageModule,
-        ItemFormPageModule
+        ItemFormPageModule,
+        FooterPageModule
     ],
   declarations: [ItemsListPage]
 })

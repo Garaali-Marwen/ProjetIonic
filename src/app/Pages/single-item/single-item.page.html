@@ -7,7 +7,7 @@
 
         <ion-buttons slot="end">
             <ion-button>
-                <ion-icon name="cart-outline"></ion-icon>
+                <ion-icon name="cart"></ion-icon>
             </ion-button>
 
             <ion-menu-button></ion-menu-button>
@@ -18,21 +18,33 @@
     </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-   <ion-card>
-     <ion-grid *ngIf="item">
-       <ion-row>
-         <ion-col size="12">
-           <ion-img alt=""
-                    [src]="'data:image/png;base64,' + item.image.imageBytes">
-           </ion-img>
-         </ion-col>
-         <ion-col size="12">
-           <ion-title>{{item.name}}</ion-title>
-         </ion-col>
-         <ion-col size="12">
-           <h6>{{item.description}}</h6>
-         </ion-col>
-       </ion-row>
-     </ion-grid>
-   </ion-card>
+    <ion-card *ngIf="item">
+        <ion-img alt=""
+                 [src]="'data:image/png;base64,' + item.image.imageBytes">
+        </ion-img>
+        <ion-card-title class="ion-padding">{{item.name}}</ion-card-title>
+        <ion-card-subtitle class="ion-padding">{{item.description}}</ion-card-subtitle>
+        <ion-card-content>
+            <div style="color: white; width: 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between">
+                <h2>TND {{item.price}}</h2>
+                <ion-button size="small">
+                    <ion-icon name="bag-add-outline" slot="end"></ion-icon>
+                    Add to cart
+                </ion-button>
+            </div>
+            <h2 *ngIf="item.itemIngredients.length"  style="color: white">
+                Ingredients:
+            </h2>
+            <ion-list *ngIf="item.itemIngredients.length" style="background-color: #1c1c1d">
+                <ion-chip *ngFor="let itemIngredient of item.itemIngredients">
+                    <ion-avatar>
+                        <ion-img alt="Silhouette of a person's head"
+                                 [src]="'data:image/png;base64,' + itemIngredient.ingredient.image.imageBytes"></ion-img>
+                    </ion-avatar>
+                    <ion-label>{{itemIngredient.ingredient.name}}</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
+<app-footer></app-footer>

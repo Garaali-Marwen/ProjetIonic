@@ -51,11 +51,11 @@ export class ItemFormPage implements OnInit {
         this.confirmEvent.emit(itemFormData);
     }
 
-    prepareFormData(formation: any, image: any): FormData {
+    prepareFormData(item: any, image: any): FormData {
         const formData = new FormData();
         formData.append(
             'item',
-            new Blob([JSON.stringify(formation)], {type: 'application/json'})
+            new Blob([JSON.stringify(item)], {type: 'application/json'})
         );
         formData.append(
             'image',

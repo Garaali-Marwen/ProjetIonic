@@ -9,15 +9,20 @@ import { IngredientsListPageRoutingModule } from './ingredients-list-routing.mod
 import { IngredientsListPage } from './ingredients-list.page';
 import {IngredientComponent} from "../../Components/ingredient/ingredient.component";
 import {IngredientFormPageModule} from "../ingredient-form/ingredient-form.module";
+import {FooterPageModule} from "../footer/footer.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    IngredientsListPageRoutingModule,
-    IngredientFormPageModule
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        IngredientsListPageRoutingModule,
+        IngredientFormPageModule,
+        FooterPageModule
+    ],
+  exports: [
+    IngredientComponent
   ],
-    declarations: [IngredientsListPage, IngredientComponent]
+  declarations: [IngredientsListPage, IngredientComponent]
 })
 export class IngredientsListPageModule {}

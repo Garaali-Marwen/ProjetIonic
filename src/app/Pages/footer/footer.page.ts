@@ -9,10 +9,10 @@ export class FooterPage implements OnInit {
 
   constructor() {
   }
-  
+
 
   ngOnInit() {
   }
 
-  
+
 }

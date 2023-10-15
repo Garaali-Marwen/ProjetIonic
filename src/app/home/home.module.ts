@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import {ItemComponent} from "../Components/item/item.component";
+import {FooterPageModule} from "../Pages/footer/footer.module";
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import {ItemComponent} from "../Components/item/item.component";
         CommonModule,
         FormsModule,
         IonicModule,
-        HomePageRoutingModule
+        HomePageRoutingModule,
+        FooterPageModule
     ],
     exports: [
         ItemComponent

@@ -1,0 +1,84 @@
+
+<ion-content [fullscreen]="true">
+  <div class="bg">
+   <div class="upper">
+      <div class="icon" style="display: flex;justify-content: center;">
+        <ion-icon name="restaurant"></ion-icon>
+      </div>
+
+   </div>
+
+   <div class="middle">
+     <div  class="box">
+       <form #sForm="ngForm">
+          <p> Create Account</p>
+
+
+          <ion-item>
+           <ion-label class="custom-label" position="floating">First Name</ion-label>
+           <ion-input type="Text input" placeholder="Your First Name" name="first" #first="ngModel" [(ngModel)]="s.email" required ></ion-input>
+           <ion-icon  name="person-circle-outline" slot="end"></ion-icon>
+
+         </ion-item>
+          <div *ngIf="email.invalid && email.touched" >
+           <ion-text color="danger text-center">
+             <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Email Address </h4>
+           </ion-text>
+          </div>
+
+
+          <ion-item>
+           <ion-label class="custom-label" position="floating">Last Name</ion-label>
+           <ion-input type="Text input" placeholder="Your Last Name" name="last" #last="ngModel" [(ngModel)]="s.last" required ></ion-input>
+           <ion-icon   name="checkmark-done-circle-outline" slot="end"></ion-icon>
+         </ion-item>
+          <div *ngIf="email.invalid && email.touched" >
+           <ion-text color="danger text-center">
+             <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Email Address </h4>
+           </ion-text>
+          </div>
+
+         <ion-item>
+           <ion-label class="custom-label" position="floating">Phone</ion-label>
+           <ion-input type="" placeholder="Your Phone" name="phone" #phone="ngModel" [(ngModel)]="s.phone" required ></ion-input>
+           <ion-icon  name="call-outline" slot="end"></ion-icon>
+          </ion-item>
+
+
+
+
+          <ion-item>
+            <ion-label class="custom-label" position="floating">Email Address</ion-label>
+            <ion-input type="email" placeholder="Your Email" name="email" #email="ngModel" [(ngModel)]="s.email" required email></ion-input>
+            <ion-icon class="icon-align-self-center" slot="end" name="mail"></ion-icon>
+          </ion-item>
+           <div *ngIf="email.invalid && email.touched" >
+            <ion-text color="danger text-center">
+              <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Email Address </h4>
+            </ion-text>
+           </div>
+
+
+          <ion-item>
+            <ion-label  class="custom-label" position="floating">Password</ion-label>
+            <ion-input [type] ="type ? 'password' : 'text'" placeholder="Your Password" name="password" #password="ngModel" [(ngModel)]="s.password" required ></ion-input>
+            <ion-icon class="icon-align-self-center" slot="end" name="eye-outline" (click) ="changeType()"></ion-icon>
+          </ion-item>
+          <div *ngIf="password.invalid && password.touched" >
+            <ion-text color="danger text-center">
+              <h4 style="padding-left: 20px; margin-top: 10px;"> Please Write Password Address </h4>
+            </ion-text>
+           </div>
+           <!-- <p id="forgetPassword" (click)="goToForget()"> Forget Password</p> -->
+
+           <p></p>
+
+       </form>
+     </div>
+     <div class="btn">
+      <ion-button>Sign-Up</ion-button>
+     </div>
+   </div>
+  </div>
+
+</ion-content>

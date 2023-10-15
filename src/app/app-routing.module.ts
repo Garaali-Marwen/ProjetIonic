@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -17,30 +17,47 @@ const routes: Routes = [
   },
   {
     path: 'item-form',
-    loadChildren: () => import('./Pages/item-form/item-form.module').then( m => m.ItemFormPageModule)
+    loadChildren: () => import('./Pages/item-form/item-form.module').then(m => m.ItemFormPageModule)
   },
   {
     path: 'ingredient-form',
-    loadChildren: () => import('./Pages/ingredient-form/ingredient-form.module').then( m => m.IngredientFormPageModule)
+    loadChildren: () => import('./Pages/ingredient-form/ingredient-form.module').then(m => m.IngredientFormPageModule)
   },
   {
     path: 'ingredients-list',
-    loadChildren: () => import('./Pages/ingredients-list/ingredients-list.module').then( m => m.IngredientsListPageModule)
+    loadChildren: () => import('./Pages/ingredients-list/ingredients-list.module').then(m => m.IngredientsListPageModule)
   },
   {
     path: 'items-list',
-    loadChildren: () => import('./Pages/items-list/items-list.module').then( m => m.ItemsListPageModule)
+    loadChildren: () => import('./Pages/items-list/items-list.module').then(m => m.ItemsListPageModule)
   },
   {
     path: 'single-item/:id',
-    loadChildren: () => import('./Pages/single-item/single-item.module').then( m => m.SingleItemPageModule)
+    loadChildren: () => import('./Pages/single-item/single-item.module').then(m => m.SingleItemPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./Pages/signup/signup.module').then(m => m.SignupPageModule)
+  },
+  {
+    path: 'signin',
+    loadChildren: () => import('./Pages/signin/signin.module').then(m => m.SigninPageModule)
+  },
+  {
+    path: 'landing',
+    loadChildren: () => import('./Pages/landing/landing.module').then(m => m.LandingPageModule)
+  },
+  {
+    path: 'details-user',
+    loadChildren: () => import('./Pages/details-user/details-user.module').then(m => m.DetailsUserPageModule)
   }
-];
+]
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

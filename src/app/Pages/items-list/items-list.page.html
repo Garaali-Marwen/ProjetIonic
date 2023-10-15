@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="cart-outline"></ion-icon>
+            </ion-button>
+
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>Menu</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ion-grid>
+        <ion-row *ngFor="let category of categories">
+            <ion-row *ngIf="category.items.length">
+                <ion-col size="12">
+                    <h2>{{ category.name }}</h2>
+                </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="category.items.length" class="scroll ion-padding-bottom">
+                <ion-col size="6" *ngFor="let item of category.items">
+                    <app-item [item]="item"></app-item>
+                </ion-col>
+            </ion-row>
+        </ion-row>
+    </ion-grid>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button id="open-modal-item-form">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <ion-modal trigger="open-modal-item-form">
+        <ng-template>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                        <ion-button (click)="cancel()">Cancel</ion-button>
+                    </ion-buttons>
+                    <ion-title>Add Item</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding">
+                <app-item-form (confirmEvent)="onConfirm($event)"></app-item-form>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+
+    <ion-toast
+            [isOpen]="isToastOpen"
+            message="Item added successfully"
+            [duration]="5000"
+            (didDismiss)="setOpen(false)"
+    ></ion-toast>
+</ion-content>

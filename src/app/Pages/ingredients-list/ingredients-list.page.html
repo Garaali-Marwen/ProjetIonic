@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Ingredients</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="ingredients.length">
+    <app-ingredient *ngFor="let ingredient of ingredients" [ingredient]="ingredient"></app-ingredient>
+  </ion-list>
+
+  <h1 *ngIf="!ingredients.length" style="width: 100%;text-align: center">No ingredients to display</h1>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button id="open-modal-ingredient-form">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-modal trigger="open-modal-ingredient-form">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Add Ingredient</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <app-ingredient-form (confirmEvent)="onConfirm($event)"></app-ingredient-form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-toast
+          [isOpen]="isToastOpen"
+          message="Ingredient added successfully"
+          [duration]="5000"
+          (didDismiss)="setOpen(false)"
+  ></ion-toast>
+</ion-content>

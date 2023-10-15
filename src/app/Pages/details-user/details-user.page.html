@@ -2,21 +2,47 @@
 
 <ion-content [fullscreen]="true">
   <div class="bg">
+    <div class="profile-image-container" >
+     <ion-img class="profile-image" [src]="user.profileImage"></ion-img>
+     <ion-icon class="edit-icon" name="create" (click)="editProfileImage()" ></ion-icon>
+    <!-- <ion-button expand="full" (click)="editProfileImage()">
+      Modifier la photo de profil
+    </ion-button>  -->
+  </div>
 
-    <!-- <ion-item>
-      <ion-label position="floating">Nom d'utilisateur</ion-label>
-      <ion-input [disabled]="!isEditing" [(ngModel)]="user.username"></ion-input>
-    </ion-item>
+    <div class="middle">
+      <div  class="box"> 
     <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input [disabled]="!isEditing" [(ngModel)]="user.email"></ion-input>
+      <ion-label position="floating" class="custom-label">First Name</ion-label>
+      <ion-input [disabled]="!isEditing" [(ngModel)]="user.firstname" class="custom-label"></ion-input>
+      <ion-icon  name="person-circle-outline" slot="end"></ion-icon>
     </ion-item>
+
     <ion-item>
-      <ion-label position="floating">Téléphone</ion-label>
-      <ion-input [disabled]="!isEditing" [(ngModel)]="user.phone"></ion-input>
+      <ion-label position="floating" class="custom-label">Last Name</ion-label>
+      <ion-input [disabled]="!isEditing" [(ngModel)]="user.lastname" class="custom-label"></ion-input>
+      <ion-icon   name="checkmark-done-circle-outline" slot="end"></ion-icon>
     </ion-item>
-    <ion-button expand="full" (click)="toggleEdit()">
-      {{ isEditing ? 'Enregistrer' : 'Modifier' }}
-    </ion-button> -->
+    
+    <ion-item>
+      <ion-label position="floating" class="custom-label">Phone</ion-label>
+      <ion-input [disabled]="!isEditing" [(ngModel)]="user.phone" class="custom-label"></ion-input>
+      <ion-icon  name="call-outline" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" class="custom-label">Email Adress</ion-label>
+      <ion-input [disabled]="!isEditing" [(ngModel)]="user.email" class="custom-label"></ion-input>
+      <ion-icon class="icon-align-self-center" slot="end" name="mail"></ion-icon>
+    </ion-item>
+   
+    
+  </div>
+  </div>
+  <div class="btn">
+  <ion-button expand="full" (click)="toggleEdit()">
+    {{ isEditing ? 'Save' : 'Edit Profil' }}
+  </ion-button>
+</div>
   </div>
 </ion-content>

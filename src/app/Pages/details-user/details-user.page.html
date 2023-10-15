@@ -1,13 +1,25 @@
 
+<ion-header [translucent]="true">
+  <ion-toolbar>
 
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>My Profil</ion-title>
+
+  </ion-toolbar>
+</ion-header>
 <ion-content [fullscreen]="true">
   <div class="bg">
     <div class="profile-image-container" >
      <ion-img class="profile-image" [src]="user.profileImage"></ion-img>
-     <ion-icon class="edit-icon" name="create" (click)="editProfileImage()" ></ion-icon>
-    <!-- <ion-button expand="full" (click)="editProfileImage()">
-      Modifier la photo de profil
-    </ion-button>  -->
+     <ion-icon class="edit-icon" name="create" (click)="openImageInput()"></ion-icon>
+     <input type="file" accept="image/*" (change)="onImageSelected($event)" #imageInput style="display: none">
   </div>
 
     <div class="middle">

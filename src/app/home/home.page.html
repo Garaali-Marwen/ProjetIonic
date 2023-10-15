@@ -1,10 +1,22 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="cart-outline"></ion-icon>
+            </ion-button>
+
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title>Home</ion-title>
+
+    </ion-toolbar>
+</ion-header>
 <ion-content class="ion-padding" [fullscreen]="true">
-  <ion-grid>
-    <h1>Category 1</h1>
-    <ion-row class="scroll">
-      <ion-col size="auto">
-        <app-item [item]="{name: 'pizza ...', price: '20$'}"></app-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
 </ion-content>

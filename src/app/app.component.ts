@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  public title = ""
   public appPages = [
-    { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'About', url: '/about', icon: 'information-circle' },
-    { title: 'Settings', url: '/settings', icon: 'settings' },
-    { title: 'Add Product', url: '/item-form', icon: 'add-circle-outline' }
+    {title: 'Home', url: '/home', icon: 'home'},
+    {title: 'Ingredients', url: '/ingredients-list', icon: 'list'},
+    {title: 'Menu', url: '/items-list', icon: 'fast-food'}
   ];
-  constructor() {}
+
+  constructor(private router: Router) {
+  }
+
+  ngOnInit() {
+  }
 }

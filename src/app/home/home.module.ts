@@ -9,12 +9,15 @@ import {ItemComponent} from "../Components/item/item.component";
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        HomePageRoutingModule
+    ],
+    exports: [
+        ItemComponent
+    ],
     declarations: [HomePage, ItemComponent]
 })
 export class HomePageModule {}

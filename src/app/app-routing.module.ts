@@ -18,6 +18,22 @@ const routes: Routes = [
   {
     path: 'item-form',
     loadChildren: () => import('./Pages/item-form/item-form.module').then( m => m.ItemFormPageModule)
+  },
+  {
+    path: 'ingredient-form',
+    loadChildren: () => import('./Pages/ingredient-form/ingredient-form.module').then( m => m.IngredientFormPageModule)
+  },
+  {
+    path: 'ingredients-list',
+    loadChildren: () => import('./Pages/ingredients-list/ingredients-list.module').then( m => m.IngredientsListPageModule)
+  },
+  {
+    path: 'items-list',
+    loadChildren: () => import('./Pages/items-list/items-list.module').then( m => m.ItemsListPageModule)
+  },
+  {
+    path: 'single-item/:id',
+    loadChildren: () => import('./Pages/single-item/single-item.module').then( m => m.SingleItemPageModule)
   }
 ];
 

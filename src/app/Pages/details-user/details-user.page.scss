@@ -5,3 +5,80 @@
     height: 100%;
     width: 100%;
 }
+
+.middle{
+    padding: 20px;
+    
+    .box{
+        border: white;
+         background-color: rgba(44, 44, 44, 0.4);
+        border-radius: 10px;
+        height:auto;
+        padding: 15px;}
+
+    }
+
+
+
+    ion-item::part(native) {
+        background:transparent;
+        color: #fff;
+     
+      }
+
+      .btn{
+                
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+        ion-button{
+            border-radius: 10px;
+            --background: #dd7520;
+            width: 100%;
+            font-family: Georgia, serif;
+        }
+
+    }
+
+    .custom-label {
+        font-family: Georgia, serif;
+        font-size: 20px;
+        
+      }
+
+      ion-item {
+          
+        border-radius: 10px;
+     
+        ion-icon{
+            color: #dd7520;
+            
+        }
+    }
+
+
+    .profile-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      
+
+      }
+      
+      .profile-image {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+      
+      .edit-icon {
+       
+        color: #dd7520;
+        font-size: 24px; 
+      }
+      
+      
+
+     

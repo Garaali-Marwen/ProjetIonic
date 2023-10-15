@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'landing',
     pathMatch: 'full'
   },
   {
@@ -18,7 +18,24 @@ const routes: Routes = [
   {
     path: 'item-form',
     loadChildren: () => import('./Pages/item-form/item-form.module').then( m => m.ItemFormPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./Pages/signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'signin',
+    loadChildren: () => import('./Pages/signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'landing',
+    loadChildren: () => import('./Pages/landing/landing.module').then( m => m.LandingPageModule)
+  },  {
+    path: 'details-user',
+    loadChildren: () => import('./Pages/details-user/details-user.module').then( m => m.DetailsUserPageModule)
   }
+
+
 ];
 
 @NgModule({

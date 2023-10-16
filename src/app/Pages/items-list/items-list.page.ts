@@ -3,6 +3,7 @@ import {IonModal} from "@ionic/angular";
 import {CategoryService} from "../../Services/category.service";
 import {ItemService} from "../../Services/item.service";
 import {ItemIngredientService} from "../../Services/item-ingredient.service";
+import {UserService} from "../../Services/user.service";
 
 @Component({
     selector: 'app-items-list',
@@ -11,20 +12,24 @@ import {ItemIngredientService} from "../../Services/item-ingredient.service";
 })
 export class ItemsListPage implements OnInit {
     @ViewChild(IonModal) modal: any;
+
     public categories: any[] = [];
     isToastOpen = false;
 
+    userRole =""
     setOpen(isOpen: boolean) {
         this.isToastOpen = isOpen;
     }
 
     constructor(private categoryService: CategoryService,
                 private itemService: ItemService,
-                private itemIngredientService: ItemIngredientService) {
+                private itemIngredientService: ItemIngredientService,
+                private userService: UserService) {
     }
 
     ngOnInit() {
         this.getAllCategories();
+        this.userRole = this.userService.getRole();
     }
 
     getAllCategories() {
@@ -64,6 +69,10 @@ export class ItemsListPage implements OnInit {
             error: error => console.log(error)
         })
         this.modal.dismiss();
+    }
+
+    close(event: any){
+      this.modal.dismiss();
     }
 
     addItemIngredient(itemIngredient: any) {

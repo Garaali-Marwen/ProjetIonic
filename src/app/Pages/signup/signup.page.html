@@ -18,10 +18,11 @@
                        #firstName="ngModel"
                        required="true">
               <div slot="label">First name
-                <ion-text style="font-size: 15px" color="danger" *ngIf="firstName.invalid && firstName.touched"><sup>Please Write your First name</sup></ion-text>
+                <ion-text style="font-size: 15px" color="danger" *ngIf="firstName.invalid && firstName.touched"><sup>Please
+                  Write your First name</sup></ion-text>
               </div>
             </ion-input>
-            <ion-icon  name="person-circle-outline" slot="end"></ion-icon>
+            <ion-icon name="person-circle-outline" slot="end"></ion-icon>
           </ion-item>
 
           <ion-item>
@@ -31,10 +32,11 @@
                        #lastName="ngModel"
                        required="true">
               <div slot="label">Last name
-                <ion-text style="font-size: 15px" color="danger" *ngIf="lastName.invalid && lastName.touched"><sup>Please Write your Last name</sup></ion-text>
+                <ion-text style="font-size: 15px" color="danger" *ngIf="lastName.invalid && lastName.touched"><sup>Please
+                  Write your Last name</sup></ion-text>
               </div>
             </ion-input>
-            <ion-icon  name="person-circle-outline" slot="end"></ion-icon>
+            <ion-icon name="person-circle-outline" slot="end"></ion-icon>
           </ion-item>
 
           <ion-item>
@@ -45,10 +47,11 @@
                        #phoneNumber="ngModel"
                        required="true">
               <div slot="label">Phone number
-                <ion-text style="font-size: 15px" color="danger" *ngIf="phoneNumber.invalid && phoneNumber.touched"><sup>Please Write your Phone number</sup></ion-text>
+                <ion-text style="font-size: 15px" color="danger" *ngIf="phoneNumber.invalid && phoneNumber.touched">
+                  <sup>Please Write your Phone number</sup></ion-text>
               </div>
             </ion-input>
-            <ion-icon  name="call-outline" slot="end"></ion-icon>
+            <ion-icon name="call-outline" slot="end"></ion-icon>
           </ion-item>
 
           <ion-item>
@@ -58,7 +61,8 @@
                        #email="ngModel"
                        required="true">
               <div slot="label">E-mail
-                <ion-text style="font-size: 15px" color="danger" *ngIf="email.invalid && email.touched"><sup>Please Write your Email address</sup></ion-text>
+                <ion-text style="font-size: 15px" color="danger" *ngIf="email.invalid && email.touched"><sup>Please
+                  Write your Email address</sup></ion-text>
               </div>
             </ion-input>
             <ion-icon class="icon-align-self-center" slot="end" name="mail"></ion-icon>
@@ -71,13 +75,17 @@
                        #password="ngModel"
                        required="true">
               <div slot="label">Password
-                <ion-text style="font-size: 15px" color="danger" *ngIf="password.invalid && password.touched"><sup>Please Write your Password</sup></ion-text>
+                <ion-text style="font-size: 15px" color="danger" *ngIf="password.invalid && password.touched"><sup>Please
+                  Write your Password</sup></ion-text>
               </div>
             </ion-input>
             <ion-icon class="icon-align-self-center" slot="end" name="key-outline"></ion-icon>
           </ion-item>
           <div class="btn">
-            <ion-button type="submit" [disabled]="firstName.errors || lastName.errors || phoneNumber.errors || email.errors || password.errors">Sign-Up</ion-button>
+            <ion-button type="submit"
+                        [disabled]="firstName.errors || lastName.errors || phoneNumber.errors || email.errors || password.errors">
+              Sign-Up
+            </ion-button>
           </div>
         </form>
       </div>

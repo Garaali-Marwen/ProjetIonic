@@ -24,4 +24,12 @@ export class ItemService {
   public getItemById(id: number){
     return this.http.get(this.apiServerUrl+`/item/${id}`)
   }
+
+  public getItemsNames(){
+    return this.http.get(this.apiServerUrl+`/item/names`)
+  }
+
+  public getItemsByName(name: string){
+    return this.http.get(this.apiServerUrl+`/item/name/${name}`)
+  }
 }

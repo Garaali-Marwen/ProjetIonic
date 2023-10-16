@@ -1,123 +1,124 @@
 
-    .bg{
-        background-image: url(../../../assets/bg.png);
-        background-size: cover;
-        height: 100%;
-        width: 100%;
+.bg {
+  background-image: url(../../../assets/bg.png);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+
+.upper {
+  //width: 50%;
+  height: 200px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    ion-icon {
+      font-size: 110px;
+      color: #fff;
+    }
+  }
+
+  #login {
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+  }
+}
+
+.middle {
+  padding: 20px;
+
+  .box {
+    // background: transparent !important;
+    border: white;
+    background-color: rgba(44, 44, 44, 0.4);
+    border-radius: 10px;
+    height: auto;
+    padding: 15px;
+
+    .custom-label {
+      font-family: Georgia, serif;
+
     }
 
-  
 
+    p {
+      font-family: Georgia, serif;
+      color: gray;
+      text-align: center;
+      font-size: 17px;
 
-      .upper{
-        //width: 50%;
-        height: 200px;
-        padding-top:50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-
-        .icon{
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             
-
-
-             ion-icon{
-                font-size: 110px;
-                color: #fff;
-             }
-        }
-        #login{
-            text-align: center;
-            color: #fff;
-            font-size: 28px;
-        }
     }
 
-    .middle{
-        padding: 20px;
-        
-        .box{
-            // background: transparent !important;
-            border: white;
-             background-color: rgba(44, 44, 44, 0.4);
-            border-radius: 10px;
-            height:auto;
-            padding: 15px;
-          
-            .custom-label {
-                font-family: Georgia, serif;
-                
-              }
-              
-        
-            p{
-                font-family: Georgia, serif;
-                color: gray;
-                text-align: center;
-                font-size: 17px;
-                
-            }
+    ion-item {
 
-            ion-item {
-              
-                border-radius: 10px;
-             
-                ion-icon{
-                    color: #dd7520;
-                    
-                }
-            }
+      border-radius: 10px;
 
-            #forgetPassword{
-                font-size: 14px;
-                color: #ff7300;
-                text-align: end;
-                margin-top: 15px;
+      ion-icon {
+        color: #dd7520;
 
-            }
-
-           
-        }
-    }
-    .btn{
-                
-        display: flex;
-        justify-content: center;
-        margin-top: 25px;
-        ion-button{
-            --background: #dd7520;
-            width: 100%;
-            font-family: Georgia, serif;
-        }
-        
-    }
-    
-    .b{
-        display: flex;
-        justify-content: center;
-        margin-top: 5px;
-        ion-button{
-            --background: #dd7520;
-            width: 100%;
-            font-family: Georgia, serif;
-        }
-    }
-
-    .pvc{
-        background-color: rgba(255, 0, 0, 0.5);
-    }
-
-    ion-item::part(native) {
-        background:transparent;
-        color: #fff;
-      
-        // border-color: #fff;
-        // border-style: dashed;
-        // border-width: 2px;
-      
-        // border-radius: 20px;
       }
+    }
+
+    #forgetPassword {
+      font-size: 14px;
+      color: #ff7300;
+      text-align: end;
+      margin-top: 15px;
+
+    }
+
+
+  }
+}
+
+.btn {
+
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+
+  ion-button {
+    --background: #dd7520;
+    width: 100%;
+    font-family: Georgia, serif;
+  }
+
+}
+
+.b {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+
+  ion-button {
+    --background: #dd7520;
+    width: 100%;
+    font-family: Georgia, serif;
+  }
+}
+
+.pvc {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+ion-item::part(native) {
+  background: transparent;
+  color: #fff;
+
+  // border-color: #fff;
+  // border-style: dashed;
+  // border-width: 2px;
+
+  // border-radius: 20px;
+}

@@ -1,61 +1,61 @@
 <ion-content [fullscreen]="true">
-    <form #itemForm="ngForm" (ngSubmit)="confirm(itemForm.value)">
-        <ion-list>
-            <ion-item>
-                <ion-input #name="ngModel"
-                           [class.is-invalid]="name.invalid && name.touched"
-                           [required]="true"
-                           ngModel name="name"
-                           label="Name *" labelPlacement="stacked" placeholder="Name"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-input #price="ngModel"
-                           [class.is-invalid]="price.invalid && price.touched"
-                           [required]="true"
-                           ngModel name="price"
-                           label="Price *" labelPlacement="stacked" placeholder="Price"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-textarea #description="ngModel"
-                              [class.is-invalid]="description.invalid && description.touched"
-                              [required]="true"
-                              ngModel name="description"
-                              label="Description *" labelPlacement="stacked" placeholder="Description"
-                              [autoGrow]="true"></ion-textarea>
-            </ion-item>
-            <ion-item>
-                <ion-select  ngModel name="ingredients"
-                            label="Ingredients" label-placement="stacked" placeholder="Select ingredients"
-                            [multiple]="true">
-                    <ion-select-option *ngFor="let ingredient of ingredientsList" [value]="ingredient">
-                        {{ingredient.name}}
-                    </ion-select-option>
-                </ion-select>
-            </ion-item>
-            <ion-item>
-                <ion-select #category="ngModel"
-                            [class.is-invalid]="category.invalid && category.touched"
-                            [required]="true"
-                            ngModel name="category"
-                            label="Category *" label-placement="stacked" placeholder="Select category">
-                    <ion-select-option *ngFor="let category of categoriesList" [value]="category">
-                        {{category.name}}
-                    </ion-select-option>
-                </ion-select>
-            </ion-item>
-            <ion-item class="image-upload ion-margin-top">
-                <div class="upload-square" style="margin: auto">
-                    <label for="file-input" class="upload-label">
-                        <ion-icon name="image-outline"></ion-icon>
-                        <span>Choose item image *</span>
-                    </label>
-                    <input type="file" id="file-input" (change)="handleImageChange($event)"/>
-                    <div *ngIf="image.url" class="image-preview">
-                        <img style="width: 100%; height: 100%" [src]="image.url" alt="Preview"/>
-                    </div>
-                </div>
-            </ion-item>
-        </ion-list>
-        <ion-button type="submit" [disabled]="itemForm.errors || !image.url" expand="full">Confirm</ion-button>
-    </form>
+  <form #itemForm="ngForm" (ngSubmit)="confirm(itemForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-input #name="ngModel"
+                   [class.is-invalid]="name.invalid && name.touched"
+                   [required]="true"
+                   ngModel name="name"
+                   label="Name *" labelPlacement="stacked" placeholder="Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input #price="ngModel"
+                   [class.is-invalid]="price.invalid && price.touched"
+                   [required]="true"
+                   ngModel name="price"
+                   label="Price *" labelPlacement="stacked" placeholder="Price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea #description="ngModel"
+                      [class.is-invalid]="description.invalid && description.touched"
+                      [required]="true"
+                      ngModel name="description"
+                      label="Description *" labelPlacement="stacked" placeholder="Description"
+                      [autoGrow]="true"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-select ngModel name="ingredients"
+                    label="Ingredients" label-placement="stacked" placeholder="Select ingredients"
+                    [multiple]="true">
+          <ion-select-option *ngFor="let ingredient of ingredientsList" [value]="ingredient">
+            {{ingredient.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select #category="ngModel"
+                    [class.is-invalid]="category.invalid && category.touched"
+                    [required]="true"
+                    ngModel name="category"
+                    label="Category *" label-placement="stacked" placeholder="Select category">
+          <ion-select-option *ngFor="let category of categoriesList" [value]="category">
+            {{category.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="image-upload ion-margin-top">
+        <div class="upload-square" style="margin: auto">
+          <label for="file-input" class="upload-label">
+            <ion-icon name="image-outline"></ion-icon>
+            <span>Choose item image *</span>
+          </label>
+          <input type="file" id="file-input" (change)="handleImageChange($event)"/>
+          <div *ngIf="image.url" class="image-preview">
+            <img style="width: 100%; height: 100%" [src]="image.url" alt="Preview"/>
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" [disabled]="itemForm.errors || !image.url" expand="full">Confirm</ion-button>
+  </form>
 </ion-content>

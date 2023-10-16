@@ -44,13 +44,14 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/signin/signin.module').then(m => m.SigninPageModule)
   },
   {
-    path: 'landing',
-    loadChildren: () => import('./Pages/landing/landing.module').then(m => m.LandingPageModule)
+    path: 'details-user/:id',
+    loadChildren: () => import('./Pages/details-user/details-user.module').then(m => m.DetailsUserPageModule)
   },
   {
-    path: 'details-user',
-    loadChildren: () => import('./Pages/details-user/details-user.module').then(m => m.DetailsUserPageModule)
+    path: 'search',
+    loadChildren: () => import('./Pages/search/search.module').then( m => m.SearchPageModule)
   }
+
 ]
 
 @NgModule({

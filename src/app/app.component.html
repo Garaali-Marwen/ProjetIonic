@@ -7,22 +7,23 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item *ngIf="connected">
+        <ion-item class="ion-no-padding" *ngIf="connected">
           <ion-accordion-group style="width: 100%">
             <ion-accordion>
               <ion-item slot="header">
                 <ion-avatar>
                   <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg"/>
                 </ion-avatar>
-                <ion-label class="ion-margin-start">{{connectedUser?.firstName}} {{connectedUser?.lastName}}</ion-label>
+                <ion-label
+                  class="ion-margin-start">{{connectedUser?.firstName | titlecase}} {{connectedUser?.lastName | titlecase}}</ion-label>
               </ion-item>
-              <div class="ion-padding" slot="content">
+              <div class="ion-padding-start" slot="content">
                 <ion-menu-toggle>
-                  <ion-item routerLink="/profil">
+                  <ion-item class="ion-no-padding" [routerLink]="profileUrl">
                     <ion-icon name="person-circle" slot="start"></ion-icon>
                     My profile
                   </ion-item>
-                  <ion-item routerLink="/" (click)="logOut()">
+                  <ion-item class="ion-no-padding" routerLink="/" (click)="logOut()">
                     <ion-icon name="log-out" slot="start"></ion-icon>
                     Log out
                   </ion-item>
@@ -31,10 +32,22 @@
             </ion-accordion>
           </ion-accordion-group>
         </ion-item>
-        <ion-menu-toggle *ngFor="let p of appPages">
-          <ion-item [routerLink]="p.url">
-            <ion-icon [name]="p.icon" slot="start"></ion-icon>
-            {{ p.title }}
+        <ion-menu-toggle>
+          <ion-item routerLink="/">
+            <ion-icon name="home" slot="start"></ion-icon>
+            Home
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf="userRole === 'ADMIN'">
+          <ion-item routerLink="ingredients-list">
+            <ion-icon name="list" slot="start"></ion-icon>
+            Ingredients
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="items-list">
+            <ion-icon name="fast-food" slot="start"></ion-icon>
+            Menu
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle *ngIf="!connected">
@@ -55,5 +68,5 @@
 
   <ion-router-outlet id="main"></ion-router-outlet>
 
-  <app-footer></app-footer>
+  <!--<app-footer></app-footer>-->
 </ion-app>

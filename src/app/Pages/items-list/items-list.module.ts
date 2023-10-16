@@ -11,6 +11,7 @@ import {IngredientFormPageModule} from "../ingredient-form/ingredient-form.modul
 import {HomePageModule} from "../../home/home.module";
 import {ItemFormPageModule} from "../item-form/item-form.module";
 import {FooterPageModule} from "../footer/footer.module";
+import {SearchPageModule} from "../search/search.module";
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import {FooterPageModule} from "../footer/footer.module";
         IngredientFormPageModule,
         HomePageModule,
         ItemFormPageModule,
-        FooterPageModule
+        FooterPageModule,
+        SearchPageModule
     ],
   declarations: [ItemsListPage]
 })

@@ -23,13 +23,13 @@
   </ion-list>
 
   <h1 *ngIf="!ingredients.length" style="width: 100%;text-align: center">No ingredients to display</h1>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab *ngIf="userRole === 'ADMIN'" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button id="open-modal-ingredient-form">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-  <ion-modal trigger="open-modal-ingredient-form">
+  <ion-modal *ngIf="userRole === 'ADMIN'" trigger="open-modal-ingredient-form">
     <ng-template>
       <ion-header>
         <ion-toolbar>
@@ -46,9 +46,9 @@
   </ion-modal>
 
   <ion-toast
-          [isOpen]="isToastOpen"
-          message="Ingredient added successfully"
-          [duration]="5000"
-          (didDismiss)="setOpen(false)"
+    [isOpen]="isToastOpen"
+    message="Ingredient added successfully"
+    [duration]="5000"
+    (didDismiss)="setOpen(false)"
   ></ion-toast>
 </ion-content>

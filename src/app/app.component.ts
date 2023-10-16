@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {UserService} from "./Services/user.service";
+import {IonModal} from "@ionic/angular";
 
 
 @Component({
@@ -9,13 +10,11 @@ import {UserService} from "./Services/user.service";
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
+
+  public profileUrl = "";
   public connected = false;
-  public connectedUser : any;
-  public appPages = [
-    {title: 'Home', url: '/landing', icon: 'home'},
-    {title: 'Ingredients', url: '/ingredients-list', icon: 'list'},
-    {title: 'Menu', url: '/items-list', icon: 'fast-food'}
-  ];
+  public connectedUser: any;
+  userRole = ""
 
   constructor(private router: Router,
               private userService: UserService) {
@@ -34,7 +33,9 @@ export class AppComponent implements OnInit {
         next: response => this.connectedUser = response,
         error: error => console.log(error)
       })
+      this.profileUrl = "/details-user/" + this.userService.getUserId();
     }
+    this.userRole = this.userService.getRole()
   }
 
   logOut() {
